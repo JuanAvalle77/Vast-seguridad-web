@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAST SEGURIDAD</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-image: url('imagenes/fondo.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.3); /* Fondo semi-transparente para que las imágenes se vean mejor */
+    border-radius: 10px;
+}
+
+.gallery img {
+    width: 300px;
+    height: 200px; /* altura fija */
+    object-fit: cover; /* recorta y mantiene proporciones */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.presentacion {
+
+        padding: 30px;
+        margin: 0;
+        max-width: 100%;
+        color: #000;
+        font-size: 18px;
+    }
+    h2 {
+    color: #0c0652; /* Azul oscuro, cambiá por el color que quieras */
+    text-align: center; /* Centrado, si querés */
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); 
+}
+    .presentacion h1 {
+    font-size: 50px;           /* Tamaño más grande */
+    font-weight: bold;         /* Letra en negrita */
+    color: #0c0652;            /* Azul oscuro, estilo seguridad */
+    text-align: center;        /* Centrado */
+    margin-top: 2px;
+    margin-bottom: 30px;       /* Espacio debajo */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.9); /* Sombra suave */
+}
+.espacio-final {
+    height: 300px; /* podés poner 400px o 500px si querés más espacio */
+}
+.contact-section {
+  background-color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #003366;
+}
+
+.contact-section p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #444;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #003366;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #00509e;
+}
+
+.contact-info {
+  flex: 1 1 250px;
+  text-align: left;
+  color: #333;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333; /* Color de fondo */
+    color: white; /* Color del texto */
+    position: relative; /* Para que quede al final del contenido */
+    bottom: 0;
+    margin-top: 40px;
+}
+.servicios {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+.bloque-servicio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.bloque-servicio img {
+  width: 300px;
+  height: auto;
+  max-height: 180px; /* Evita imágenes muy altas */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.servicios h2 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #0c0652;
+  text-align: center;
+  text-shadow: none; /* sin sombra */
+}
+
+.servicios h3 {
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: left;
+  text-shadow: none;
+  padding-left: 20px;
+}
+
+.servicios-container {
+  max-width: 1000px;
+}
+
+.servicios-container ul {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.servicios-container li {
+  list-style: none;
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 8px;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.servicios-container li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: #d87800;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.servicios li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 0; /* quitamos el espacio de la flecha */
+  position: relative;
+  margin-bottom: 12px;
+  font-size: 1.2em;
+  color: #111;
+}
+
+.servicios li::before {
+  display: none; /* Ocultamos la flecha */
+}
+
+.servicios li img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+.contenedor-central {
+  max-width: 1200px;
+  margin: 0 auto;
+  scroll-margin-top: 120px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-padding-top: 120px; /* AJUSTÁ este valor al alto de tu header */
+}
+.info-central {
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  
+}
+.info-central .categoria-servicio {
+  margin-bottom: 30px;
+  text-align: left;
+}
+.bloque-transparente {
+  background-color: rgba(255, 255, 255, 0.4); /* blanco semitransparente */
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  margin: 40px auto;
+}
+.top-bar {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    font-size: 14px;
+}
+
+.top-left {
+    display: flex;
+    align-items: center;
+}
+
+.top-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.icon {
+    height: 16px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.logo-top {
+    height: 28px;
+}
+
+/* HEADER SUPERIOR AL ESTILO SISMA */
+.header {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 1000;
+  margin: 0; /* este estaba mal */
+  padding: 0;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* esto sí puede quedar */
+}
+section {
+  scroll-margin-top: 70px; /* el mismo alto del header */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 20px;
+}
+
+.logo-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-header img {
+  height: 50px;
+}
+
+.logo-text h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.logo-text span {
+  color: #00a2d4;
+}
+
+.logo-text p {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 25px;
+}
+
+.nav-menu ul li a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-menu ul li a:hover {
+  color: #00a2d4;
+}
+
+.slider-container {
+  position: relative;
+  max-width: 100%;
+  height: 400px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.slider {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 500px; /* ajustá si querés más alto */
+  overflow: hidden;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  user-select: none;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+html {
+  scroll-behavior: smooth;
+}
+#nosotros {
+  scroll-margin-top: 120px; /* ajustá según el alto real del header */
+}
+.texto-gris {
+  color: #5c5c5c; /* o #666666, según el tono que más se acerque */
+}
+#inicio {
+  scroll-margin-top: 0 !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* Espacio entre los íconos */
+  margin-top: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.contact-icons a {
+  display: flex;
+  flex-direction: column;  /* Cambiado a columna para que el texto quede debajo de la imagen */
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.2s ease;
+}
+
+.contact-icons a img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain; /* Evita que se deforme la imagen */
+  background: none;
+}
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-container">
+          <div class="logo-header">
+            <img src="imagenes/vast.png" alt="Logo VAST" />
+            <div class="logo-text">
+              <h1>VAST <span>SEGURIDAD</span></h1>
+              <p>Higiene, Seguridad y Medio Ambiente</p>
+            </div>
+          </div>
+          <nav class="nav-menu">
+            <ul>
+              <li><a href="#inicio">INICIO</a></li>
+              <li><a href="#empresa">EMPRESA</a></li>
+              <li><a href="#contenedor-central">SERVICIOS</a></li>
+              <li><a href="#porque-elegirnos">¿POR QUÉ ELEGIRNOS?</a></li>
+              <li><a href="#contacto">CONTACTO</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <section id="inicio" class="slider">
+
+      <div class="slider">
+        <img class="slide active" src="imagenes/foto1.jpg" alt="Imagen 1">
+        <img class="slide" src="imagenes/foto2.jpg" alt="Imagen 2">
+        <img class="slide" src="imagenes/foto3.jpg" alt="Imagen 3">
+        <img class="slide" src="imagenes/foto4.jpg" alt="Imagen 4">
+        <img class="slide" src="imagenes/foto5.jpg" alt="Imagen 5">
+        <img class="slide" src="imagenes/foto6.jpg" alt="Imagen 6">
+        <img class="slide" src="imagenes/foto7.jpg" alt="Imagen 7">
+        <div class="prev" onclick="prevSlide()">&#10094;</div>
+        <div class="next" onclick="nextSlide()">&#10095;</div>
+      </div>
+    </section>
+
+    <section id="empresa" class="presentacion">
+      <div class="presentacion">
+        
+          
+          <h1>Nosotros</h1>
+          <p>En VAST SEGURIDAD, nos especializamos en brindar soluciones integrales en seguridad e higiene laboral, enfocadas en la prevención de riesgos y el cuidado del entorno de trabajo.
+
+            Contamos con un equipo de profesionales altamente capacitados, con amplia experiencia en el cumplimiento de normativas vigentes, como la Ley 19.587 de Higiene y Seguridad en el Trabajo, ofreciendo asesoramiento y servicios adaptados a cada necesidad.
+            
+            Nuestra misión es garantizar entornos laborales seguros, saludables y eficientes, brindando un servicio confiable, responsable y personalizado para clientes particulares, comerciales e industriales.
+            
+            Protegemos tu tranquilidad, promovemos ambientes de trabajo seguros.</p>
+          
+        
+      </div>
+    </section>
+
+
+    
+  <div class="contenedor-central" id="contenedor-central">
+    <section id="nosotros" class="contenedor-central">
+
+    
+    
+    <h2>Servicios</h2>
+  </section>
+
+    <div class="bloque-servicio">
+      <div class="servicios-container">
+        <h3>Mediciones</h3>
+        
+        <ul>
+          <li>Medición de ruido laboral Res 85/2011</li>
+              <li>Medición de Iluminación Res 84/2011</li>
+              <li>Medición de Puesta a Tierra Res 900/2015</li>
+              <li>Medición de Vibraciones Res 295/03</li>
+        </ul>
+      </div>
+      <img src="imagenes/medicion.png" alt="Medicion">
+    </div>
+
+    <div class="bloque-servicio">
+      <div class="servicios-container">
+        <h3>Estudios</h3>
+        <ul>
+          <li>Ergonomía Res 886/2015</li>
+              <li>Carga de Fuego</li>
+              <li>Ventilación Dec 351/79</li>
+              <li>Muestreo y Análisis de Aguas de uso y Consumo Humano</li>
+              <li>Análisis de riesgo de puestos de Trabajo</li>
+        </ul>
+      </div>
+      <img src="imagenes/estudios.png" alt="Estudios">
+    </div>
+
+    <div class="bloque-servicio">
+      <div class="servicios-container">
+        <h3>Medio Ambiente</h3>
+        <ul>
+          <li>Categorización Industrial</li>
+              <li>Estudio de impacto Ambiental</li>
+              <li>Análisis de Riesgos Ambientales</li>
+              <li>Desarrollo de política ambiental</li>
+              <li>Efluentes líquidos</li>
+              <li>Efluentes gaseosos</li>
+              <li>Residuos peligrosos y/o especiales</li>
+              <li>Explotación de recursos hídricos</li>
+              <li>Permiso de vuelco de efluentes líquidos</li>
+              <li>Plan de contingencia ambiental</li>
+              <li>Medición de contaminantes ambientales.</li>
+        </ul>
+      </div>
+      <img src="imagenes/medioambiente.png" alt="Medio Ambiente">
+    </div>
+    
+    <div class="bloque-servicio">
+      <div class="servicios-container">
+        <h3>Tramites</h3>
+        <ul>
+          <li>Habilitaciones Municipales</li>
+              <li>Inscripciones en el Registro de la Industria de Gas Envasado</li>
+              <li>Inscripciones ante la Secretaría de Energía de la Nación</li>
+              <li>Atención. a Organismos de Control.</li>
+        </ul>
+      </div>
+      <img src="imagenes/tramites.png" alt="Trámites">
+    </div>
+    
+    <div class="bloque-servicio">
+      <div class="servicios-container">
+        <h3>Certificaciones</h3>
+        <ul>
+          <li>Certificación de plantas de fraccionamiento de GLP</li>
+              <li>Certificación de Depósitos</li>
+              <li>Estaciones de Servicio</li>
+              <li>Consumidores Independientes</li>
+        </ul>
+      </div>
+      <img src="imagenes/certificacion.png" alt="Certificaciones">
+    
+    </div>
+
+    
+
+    <!-- Repetir bloque-servicio aquí para otros servicios -->
+
+  </div>
+
+  <section id="porque-elegirnos" style="padding: 60px 20px; background-color: white;">
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <h2 style="text-align: center; font-size: 32px; font-weight: bold; margin-bottom: 30px;">¿Por qué elegirnos?</h2>
+      <ul style="list-style: none; padding: 0; font-size: 18px; line-height: 1.6;">
+        <li>🔒 <strong>Experiencia comprobada:</strong> Contamos con años de trayectoria en el rubro de la seguridad en el trabajo.</li>
+        <li>👮 <strong>Personal capacitado:</strong> Nuestro equipo está conformado por profesionales entrenados y comprometidos.</li>
+        <li>🛡️ <strong>Atención personalizada:</strong> Adaptamos nuestros servicios a las necesidades de cada cliente.</li>
+        <li>📍 <strong>Cobertura en toda la región:</strong> Ofrecemos servicios en múltiples localidades con respuesta rápida.</li>
+        <li>📞 <strong>Soporte 24/7:</strong> Atención continua ante cualquier urgencia o consulta.</li>
+      </ul>
+    </div>
+  </section>
+  
+      
+    
+    <h2>Galería de Trabajos</h2>
+    <div class="gallery">
+        <img src="imagenes/foto1.jpg" alt="Trabajo realizado">
+        <img src="imagenes/foto2.jpg" alt="Trabajo realizado">
+    <img src="imagenes/foto3.jpg" alt="Trabajo realizado">
+    <img src="imagenes/foto4.jpg" alt="Trabajo realizado">
+    <img src="imagenes/foto5.jpg" alt="Trabajo realizado">
+    <img src="imagenes/foto6.jpg" alt="Trabajo realizado">
+    <img src="imagenes/foto7.jpg" alt="Trabajo realizado">
+    <img src="imagenes/foto8.jpg" alt="Trabajo realizado">
+    <img src="imagenes/foto9.jpg" alt="Trabajo realizado">
+    <img src="imagenes/foto10.jpg" alt="Trabajo realizado">
+    <img src="imagenes/foto11.jpg" alt="Trabajo realizado">
+    <img src="imagenes/foto12.jpg" alt="Trabajo realizado">
+    <img src="imagenes/foto13.jpg" alt="Trabajo realizado">
+    <img src="imagenes/foto14.jpg" alt="Trabajo realizado">
+    </div>
+    <section id="contacto" class="contact-section">
+      <h2>Contacto</h2>
+      <p>¿Querés comunicarte con nosotros? Completá el formulario o usá nuestros datos de contacto.</p>
+      
+      <div class="contact-container">
+        <form name="contacto"
+      method="POST"
+      action="/gracias.html"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="contact-form">
+
+  <!-- Requisito clave para Netlify: debe coincidir con name del form -->
+  <input type="hidden" name="form-name" value="contacto">
+
+  <!-- Honeypot antispam -->
+  <p style="display:none">
+    <label>Si sos humano, dejá esto vacío: <input name="bot-field"></label>
+  </p>
+
+  <input type="text"   name="nombre"  placeholder="Nombre" required>
+  <input type="email"  name="email"   placeholder="Email"  required>
+  <textarea            name="mensaje" placeholder="Escribí tu mensaje..." required></textarea>
+
+  <!-- Opcional: subject del mail que te llega -->
+  <input type="hidden" name="subject" value="Nuevo mensaje desde el sitio">
+
+  <button type="submit">Enviar</button>
+</form>
+
+        
+    
+        <div class="contact-info">
+          <div class="contact-icons">
+            <a href="https://wa.me/541140757251" target="_blank" class="contact-item">
+              <img src="imagenes/wpp.png" alt="WhatsApp">
+              <span>WhatsApp</span>
+            </a>
+            <a href="mailto:sebastiancasella219@gmail.com" class="contact-item">
+              <img src="imagenes/gmail.png" alt="Gmail">
+              <span>Gmail</span>
+            </a>
+          </div>
+          
+          
+        </div>
+      </div>
+    </section>
+    
+    
+    <footer class="footer">
+        <p>&copy; 2025 VAST SEGURIDAD - Todos los derechos reservados.</p>
+    </footer>
+    
+  <!-- Tu contenido -->
+  
+  <!-- Pegá el JS acá abajo -->
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+      });
+      slides[index].classList.add("active");
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    setInterval(nextSlide, 5000); // Cambia cada 5 segundos
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const headerHeight = document.querySelector(".header").offsetHeight;
+      
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener("click", function (e) {
+          const targetId = this.getAttribute("href").substring(1);
+          const targetSection = document.getElementById(targetId);
+  
+          if (targetSection) {
+            e.preventDefault();
+            const sectionTop = targetSection.getBoundingClientRect().top + window.pageYOffset;
+            const scrollTo = sectionTop - headerHeight;
+  
+            // Solo scrollea si no estamos ya cerca del destino
+            if (Math.abs(window.scrollY - scrollTo) > 5) {
+              window.scrollTo({
+                top: scrollTo,
+                behavior: "smooth"
+              });
+            }
+          }
+        });
+      });
+    });
+  </script>
+  
+</body>
+</html>
